@@ -1,0 +1,182 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>Filter Form</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'template.css ' %}">
+<script src="https://kit.fontawesome.com/7a36e42221.js" crossorigin="anonymous"></script>
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/4.4/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
+<meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<main role="main" class="container">
+
+<h3>Filter Patients<h3>
+<form method="GET" action=".">
+  <div class="form-row">
+    <div class="form-group col-12">
+        <div class="input-group">
+            <input class="form-control py-2 border-right-0 border" type="search" name="name_contains" placeholder="Patient's name"/>
+            <span class="input-group-append">
+                <div class="input-group-text bg-transparent">
+                    <i class="fa fa-search"></i>
+                </div>
+            </span>
+        </div>
+  </div>
+  </div>
+    <div class="form-row">
+    <div class="form-group col-12">
+        <div class="input-group">
+            <input class="form-control py-2 border-right-0 border" type="search" name="id_exact" placeholder="Exact id"/>
+            <span class="input-group-append">
+                <div class="input-group-text bg-transparent">
+                    <i class="fa fa-search"></i>
+                </div>
+            </span>
+        </div>
+  </div>
+  </div>
+    <div class="form-row">
+    <div class="form-group col-12">
+        <div class="input-group">
+            <input class="form-control py-2 border-right-0 border" type="search" name="patient_or_doctor" placeholder="Patient's or Doctor's name"/>
+            <span class="input-group-append">
+                <div class="input-group-text bg-transparent">
+                    <i class="fa fa-search"></i>
+                </div>
+            </span>
+        </div>
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input type="text" class="form-control" id="inputAddress" name="patient_address" placeholder="1234 Main St">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-2 col-lg-2">
+      <label for="minage">Minimum age</label>
+      <input type="number" min=0 class="form-control" id="minage" name="min_age" placeholder="Min age">
+    </div>
+    <div class="form-group col-md-2 col-lg-2">
+      <label for="maxage">Maximum age</label>
+      <input type="number" min=0 class="form-control" id="maxage" name="max_age" placeholder="Max age">
+    </div>
+        <div class="form-group col-md-2 col-lg-2">
+      <label for="reportdatemin">Report date minimum</label>
+      <input type="date" min=0 class="form-control" id="reportdatemin" name="min_date">
+    </div>
+    <div class="form-group col-md-2 col-lg-2">
+      <label for="reportdatemax">Report date maximum</label>
+      <input type="date" min=0 class="form-control" id="reportdatemax" name="max_date">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="testcategory">Test Category</label>
+      <select id="testcategory" class="form-control" name="test_category">
+        <option selected>Choose...</option>
+        {% for cat in test_categories  %}
+        <option value="{{ cat }}">{{ cat }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="tested" name="tested">
+      <label class="form-check-label" for="tested">
+        Tested
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="nottested" name="not_tested">
+      <label class="form-check-label" for="nottested">
+        Not Tested
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Search</button>
+
+</form>
+
+<hr>
+<div class="row">
+  <ul>
+    {% for patient in queryset %}
+      <li>
+        {{ patient.name }}
+        <span> {% for doc in patient.doctor.all %}
+            {{ doc }}
+          {% endfor %}
+          </span>
+        <span>
+          {% for cat in patient.test_category.all %}
+            {{ cat }}
+          {% endfor %}
+        <span>
+        <span>Collected date: {{ patient.collected_date.date }} </span>
+        <span>Age: {{ patient.age }} </span>
+        <span>Tested: In process </span>
+      </li>
+      <hr/>
+    {% endfor %}
+    </ul>
+</div>
+
+</main><!-- /.container -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</html>
